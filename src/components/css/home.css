@@ -1,0 +1,19 @@
+.about-section {
+    position: relative;
+    background-position: 50% -1058.52px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: 1;
+}
+
+.about-section::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #006ab66f 0%, #f7942abb 100%);
+    z-index: -1;
+}
