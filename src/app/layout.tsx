@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Nav from "@/components/navbar";
 import LoadAnimation from '@/components/load';
+import Footer from '@/components/footer';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -21,6 +22,7 @@ export default function RootLayout({
         <LoadAnimation />
         <Nav/>
         {children}
+        <Footer />
       </body>
     </html>
   )

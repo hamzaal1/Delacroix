@@ -8,7 +8,7 @@ export default function Home() {
       <CarouselList />
 
       <div className="container py-16">
-        <h2 className="text-2xl mb-3">What We Offer</h2>
+        <h2 className="text-3xl font-semibold mb-2">What We Offer</h2>
         <p className="leading-6">
           On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word.
         </p>
@@ -62,7 +62,7 @@ export default function Home() {
       <section className="about-section py-16 bg-fixed relative bg-stellar bg-[url('https://themewagon.github.io/fox/images/bg_3.jpg')]" id="section-counter">
         <div className="container mx-auto ">
           <div className="flex flex-wrap justify-center mb-5 pb-2 md:px-8">
-            <div className="w-full md:w-6/12 flex items-center bg-[url('/founded.png')] bg-center bg-cover rounded-md">
+            <div className="pop-up w-full md:w-6/12 flex items-center bg-[url('/founded.png')] bg-center bg-cover rounded-md">
               <div className="w-full md:w-8/12 mx-auto hidden md:block ">
                 {/* on click this a ag open this iframe <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FINSTITUTEUGENEDELACROIX%2Fvideos%2F298275322002695%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe> */}
                 <ModalView />
