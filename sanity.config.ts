@@ -12,6 +12,7 @@ import {schema} from './sanity/schema'
 
 export default defineConfig({
   basePath: '/admin',
+  name:"delacroix-admin",
   projectId,
   dataset,
   // Add and edit the content schema in the './sanity/schema' folder
