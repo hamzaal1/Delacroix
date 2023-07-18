@@ -9,6 +9,7 @@ const query = groq`
   }[0...4]
 `;
 
+export const revalidate = 30 // revalidate this page every 30 seconds
 
 async function Blogsection() {
     const last_blogs = await client.fetch(query);

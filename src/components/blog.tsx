@@ -9,7 +9,6 @@ interface TrunText {
     isTrun: boolean;
 }
 
-export const revalidate = 30 // revalidate this page every 30 seconds
 
 function truncateText(text: string, maxLength: number, isTrun = false): TrunText {
     if (text.length > maxLength) {
