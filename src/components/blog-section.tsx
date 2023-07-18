@@ -2,6 +2,7 @@
 import { groq } from "next-sanity";
 import { client } from "../../sanity/lib/client";
 import Blog from "./blog";
+import { useEffect, useState } from "react";
 
 const query = groq`
   *[_type == 'blog']
@@ -11,8 +12,15 @@ const query = groq`
 `;
 
 
-async function Blogsection() {
-    const last_blogs = await client.fetch(query);
+function Blogsection() {
+    const [blogs, setBlogs] = useState([]);
+    useEffect(() => {
+        async function fetcher() {
+            const last_blogs = await client.fetch(query);
+            setBlogs(last_blogs);
+        }
+        fetcher();
+    }, [])
     // console.log(last_blogs[0].body[0].children.map(content => content.text));
     // console.log(last_blogs[0].body.children);
 
@@ -26,7 +34,7 @@ async function Blogsection() {
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 justify-center py-6 gap-5">
                     {
-                        last_blogs.map((blog:any) => <Blog content={blog} />)
+                        blogs.map((blog: any) => <Blog content={blog} />)
                     }
                 </div>
             </div>

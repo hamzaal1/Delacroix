@@ -29,7 +29,7 @@ function Blog({ content }: any) {
 
 
     return (
-        <div className='bg-background py-5 px-6 rounded-md border border-secondary'>
+        <div key={content.title} className='bg-background py-5 px-6 rounded-md border border-secondary'>
             <Image className='rounded-md mx-auto' src={`${urlForImage(content.mainImage).url()}`} width={270} height={80} alt='' />
             <p className='my-3 font-medium'>{content.title}</p>
             <p>{truncatedContent.text}</p>
