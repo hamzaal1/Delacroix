@@ -1,55 +1,64 @@
-import CarouselList from "@/components/CurselList";
 import Blogsection from "@/components/blog-section";
 import "@/components/css/home.css"
 import ModalView from "@/components/modal";
 export default function Home() {
   return (
     <>
-      <CarouselList />
+
 
       <div className="container py-16">
-        <h2 className="text-3xl font-semibold mb-2">What We Offer</h2>
-        <p className="leading-6">
-          On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word.
+        <h2 className="text-3xl font-semibold mb-2 text-center">Nos Valeurs</h2>
+        <p className="leading-6 text-center">
+          Nos valeurs sont au cœur de notre identité et guident chacune de nos actions au sein de l'Institut Eugène Delacroix. Elles définissent notre philosophie éducative et façonnent notre communauté scolaire en une famille engagée et bienveillante.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-6 md:py-0 md:px-8">
-          <div className="flex gap-2 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 py-10 md:px-8">
+          <div className="flex gap-2 items-center mb-5">
             <div className="px-6 w-20 h-20 rounded-full bg-drose flex justify-center items-center">
               <i className="text-white fa-solid fa-wand-magic-sparkles text-3xl"></i>
             </div>
             <div>
-              <h3 className="mt-0 font-medium">Safety First</h3>
+              <h3 className="mt-0 font-semibold text-lg">Communication</h3>
               <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
             </div>
           </div>
 
-          <div className="flex gap-2 items-center md:mt-24">
+          <div className="flex gap-2 items-center mb-5">
             <div className="px-6 w-20 h-20 rounded-full bg-dorange flex justify-center items-center">
               <i className="text-white fa-solid fa-wand-magic-sparkles text-3xl"></i>
             </div>
             <div>
-              <h3 className="mt-0 font-medium">Safety First</h3>
+              <h3 className="mt-0 font-semibold text-lg">Eveil</h3>
               <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
             </div>
           </div>
 
-          <div className="flex gap-2 items-center">
+          <div className="flex gap-2 items-center mb-5">
             <div className="px-6 w-20 h-20 rounded-full bg-dblue flex justify-center items-center">
               <i className="text-white fa-solid fa-wand-magic-sparkles text-3xl"></i>
             </div>
             <div>
-              <h3 className="mt-0 font-medium">Safety First</h3>
+              <h3 className="mt-0 font-semibold text-lg">Curiosite</h3>
               <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
             </div>
           </div>
 
-          <div className="flex gap-2 items-center md:mt-28">
+          <div className="flex gap-2 items-center mb-5">
             <div className="px-6 w-20 h-20 rounded-full bg-gray-600 flex justify-center items-center">
               <i className="text-white fa-solid fa-wand-magic-sparkles text-3xl"></i>
             </div>
             <div>
-              <h3 className="mt-0 font-medium">Safety First</h3>
+              <h3 className="mt-0 font-semibold text-lg">Epanouissement</h3>
+              <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
+            </div>
+          </div>
+
+          <div className="flex gap-2 items-center mb-5">
+            <div className="px-6 w-20 h-20 rounded-full bg-dorange flex justify-center items-center">
+              <i className="text-white fa-solid fa-wand-magic-sparkles text-3xl"></i>
+            </div>
+            <div>
+              <h3 className="mt-0 font-semibold text-lg">Excellence</h3>
               <p>Far far away, behind the word mountains, far from the countries Vokalia.</p>
             </div>
           </div>
@@ -72,52 +81,6 @@ export default function Home() {
               <h2 className="mb-4 text-white text-4xl font-bold">Institut Eugène Delacroix</h2>
               <p className="text-white font-semibold leading-8 ">Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
               <p className="text-white font-semibold leading-8 ">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-            </div>
-          </div>
-          <div className="flex flex-wrap items-center justify-center ">
-            <div className="w-full lg:w-12/12">
-              <div className="flex flex-wrap items-center">
-                <div className="w-full md:w-6/12 lg:w-3/12 xl:w-3/12 px-4">
-                  <div className="text-center counter-wrap animate-fadeIn">
-                    <div className="block-18">
-                      <div className="text">
-                        <strong className="block text-5xl text-white font-bold mb-2" data-number="18">18</strong>
-                        <span className="text-white">Certified Teachers</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="w-full md:w-6/12 lg:w-3/12 xl:w-3/12 px-4">
-                  <div className="text-center counter-wrap animate-fadeIn">
-                    <div className="block-18">
-                      <div className="text">
-                        <strong className="block text-5xl text-white font-bold mb-2" data-number="401">401</strong>
-                        <span className="text-white">Students</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="w-full md:w-6/12 lg:w-3/12 xl:w-3/12 px-4">
-                  <div className="text-center counter-wrap animate-fadeIn">
-                    <div className="block-18">
-                      <div className="text">
-                        <strong className="block text-5xl text-white font-bold mb-2" data-number="30">30</strong>
-                        <span className="text-white">Courses</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="w-full md:w-6/12 lg:w-3/12 xl:w-3/12 px-4">
-                  <div className="text-center counter-wrap animate-fadeIn">
-                    <div className="block-18">
-                      <div className="text">
-                        <strong className="block text-5xl text-white font-bold mb-2" data-number="50">50</strong>
-                        <span className="text-white">Awards Won</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>

@@ -1,26 +1,94 @@
 "use client"
 import Image from 'next/image'
+import Link from 'next/link'
 import React, { useState } from 'react'
+import DropdownView from './dropdown'
+import CMS from './cms'
+
+const presrntation = [
+    {
+        key: '1',
+        label: (
+            <Link className='px-10' rel="noopener noreferrer" href="https://www.antgroup.com">
+               <CMS id='88731520-0ca0-4b54-9b8f-f833cd8c4965' />
+            </Link>
+        ),
+    },
+    {
+        key: '2',
+        label: (
+            <Link className='px-10' rel="noopener noreferrer" href="https://www.antgroup.com">
+                <CMS id='3567aa1b-4c67-480b-ad10-a228c794a0c2' />
+            </Link>
+        ),
+    },
+    {
+        key: '3',
+        label: (
+            <Link className='px-10' rel="noopener noreferrer" href="https://www.antgroup.com">
+                <CMS id='555fc22b-f4b2-4cd9-9983-464654f9d191' />
+            </Link>
+        ),
+    }
+];
+const courses_scolaire = [
+    {
+        key: '1',
+        label: (
+            <Link className='px-10' rel="noopener noreferrer" href="https://www.antgroup.com">
+                <CMS id='1c8f9e7a-4ede-4bf9-b253-2c50f02690e8' />
+            </Link>
+        ),
+    },
+    {
+        key: '2',
+        label: (
+            <Link className='px-10' rel="noopener noreferrer" href="https://www.antgroup.com">
+                <CMS id='83f37ab2-0864-4a31-8176-8f3398ff3d5d' />
+            </Link>
+        ),
+    },
+    {
+        key: '3',
+        label: (
+            <Link className='px-10' rel="noopener noreferrer" href="https://www.antgroup.com">
+                <CMS id='fd019c85-e728-448c-972c-936e28ec5662' />
+            </Link>
+        ),
+    },
+    {
+        key: '4',
+        label: (
+            <Link className='px-10' rel="noopener noreferrer" href="https://www.antgroup.com">
+               <CMS id='9822cb63-d840-4b7f-98eb-b6d87147f79c' />
+            </Link>
+        ),
+    }
+];
+
 
 const Nav = () => {
     const [isOpen, setIsOpen] = useState(false)
     return (
         <header className=''>
-            <nav className='container flex flex-col md:flex-row justify-between py-3 md:py-0 items-start md:items-center'>
-                <Image src={"/logo.png"} width={90} height={30} alt='Delacroix Logo' />
+            <nav className='container flex flex-col md:flex-row justify-between py-4 md:py-0 items-start md:items-center'>
+                {/* <Image src={"/logo.png"} width={90} height={30} alt='Delacroix Logo' /> */}
+                <Link href={'/'}>
+                    <Image src={'/logo-1.png'} width={190} height={30} alt='logo' />
+                </Link>
                 <div className='flex flex-col md:flex-row gap-5 md:gap-10'>
                     <div className='cursor-default flex flex-row items-center gap-3'>
                         <i className="fa-regular fa-paper-plane text-dorange text-2xl" />
                         <div >
-                            <h3 className='font-semibold'>Email</h3>
-                            <p>hamzademnati21@gmail.com</p>
+                            <h3 className='font-semibold'><CMS id='739638db-783c-4924-83d9-166ba0721828' /></h3>
+                            <p> <CMS id='3cc7396c-6d29-40e8-92d0-fa69b3d10043' /> </p>
                         </div>
                     </div>
                     <div className='cursor-default flex flex-row items-center gap-3'>
                         <i className="fa-solid fa-phone text-dorange text-2xl" />
                         <div >
-                            <h3 className='font-semibold'>Phone</h3>
-                            <p>(+212) 6 82 49 01 13</p>
+                            <h3 className='font-semibold'><CMS id='25a17bd2-8069-4c2d-92ef-44b50d432b2a' /></h3>
+                            <p><CMS id='82c238ca-6ff2-4319-99db-f0503c3106ae' /></p>
                         </div>
                     </div>
                 </div>
@@ -32,11 +100,17 @@ const Nav = () => {
                     </button>
                     <div className={` ${isOpen ? '' : 'hidden'} py-4 md:py-0 md:block text-xl md:text-base`}>
                         <ul className='flex flex-col md:flex-row gap-3 md:gap-6 '>
-                            <li className='py-1'>Home</li>
-                            <li className='py-1'>About</li>
-                            <li className='py-1'>Services</li>
-                            <li className='py-1'>Blogs</li>
-                            <li className='py-1'>Contact</li>
+                            <li className='py-1'> <Link href={'/'}><CMS id='74374e37-b9d7-4753-a1bf-936964f77e08' /></Link> </li>
+                            <li className='py-1'>
+                                <DropdownView items={presrntation} title={<CMS id='7a6e5153-1bfb-42a4-b900-73321ccceb3b' />} />
+                            </li>
+                            <li className='py-1'>
+                                <DropdownView items={courses_scolaire} title={<CMS id='f52be135-c749-4d5c-b3db-1394dbaa717b' />} />
+                            </li>
+                            <li className='py-1'> <Link href={'/'}><CMS id='7c1a6cdf-6f3c-4154-90d9-62b887635212' /></Link> </li>
+                            <li className='py-1'> <Link href={'/admissions'}><CMS id='30665c05-7ecc-4aeb-b397-b9521962e110' /></Link> </li>
+                            <li className='py-1'> <Link href={'/'}><CMS id='4b62af8a-2158-47dd-9cd7-efde7c8e17e7' /></Link> </li>
+                            <li className='py-1'> <Link href={'/nous-contact'}><CMS id='6d1837b7-c9a4-4b4d-9818-357b67c4fd23' /></Link> </li>
                         </ul>
                     </div>
                 </div>

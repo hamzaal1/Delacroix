@@ -4,6 +4,10 @@ import { Inter } from 'next/font/google'
 import Nav from "@/components/navbar";
 import LoadAnimation from '@/components/load';
 import Footer from '@/components/footer';
+import Map from '@/components/map';
+import Providers from '@/redux/providers';
+import CarouselList from '@/components/CurselList';
+import LoadData from '@/components/load-data';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -20,9 +24,14 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} overflow-hidden`}>
         <LoadAnimation />
-        <Nav/>
-        {children}
-        <Footer />
+        <Providers >
+          <LoadData />
+          <Nav />
+          <CarouselList />
+          {children}
+          <Map />
+          <Footer />
+        </Providers>
       </body>
     </html>
   )
