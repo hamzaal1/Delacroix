@@ -109,7 +109,7 @@ const Nav = () => {
                             </li>
                             <li className='py-1'> <Link href={'/'}><CMS id='7c1a6cdf-6f3c-4154-90d9-62b887635212' /></Link> </li>
                             <li className='py-1'> <Link href={'/admissions'}><CMS id='30665c05-7ecc-4aeb-b397-b9521962e110' /></Link> </li>
-                            <li className='py-1'> <Link href={'/'}><CMS id='4b62af8a-2158-47dd-9cd7-efde7c8e17e7' /></Link> </li>
+                            <li className='py-1'> <Link href={'/recrutements'}><CMS id='4b62af8a-2158-47dd-9cd7-efde7c8e17e7' /></Link> </li>
                             <li className='py-1'> <Link href={'/nous-contact'}><CMS id='6d1837b7-c9a4-4b4d-9818-357b67c4fd23' /></Link> </li>
                         </ul>
                     </div>
