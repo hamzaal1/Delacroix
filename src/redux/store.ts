@@ -3,11 +3,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import counterReducer from '@/redux/Slices/counterReducer';
 import contentSlice from '@/redux/Slices/contentSlice';
+import annonceSlice from '@/redux/Slices/annonceSlice';
 
 export const store = configureStore({
     reducer: {
         counter: counterReducer,
-        content: contentSlice
+        content: contentSlice,
+        annonces:annonceSlice
     }
 })
 

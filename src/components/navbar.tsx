@@ -1,16 +1,17 @@
 "use client"
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import DropdownView from './dropdown'
 import CMS from './cms'
+import { usePathname } from 'next/navigation'
 
 const presrntation = [
     {
         key: '1',
         label: (
             <Link className='px-10' rel="noopener noreferrer" href="https://www.antgroup.com">
-               <CMS id='88731520-0ca0-4b54-9b8f-f833cd8c4965' />
+                <CMS id='88731520-0ca0-4b54-9b8f-f833cd8c4965' />
             </Link>
         ),
     },
@@ -60,7 +61,7 @@ const courses_scolaire = [
         key: '4',
         label: (
             <Link className='px-10' rel="noopener noreferrer" href="https://www.antgroup.com">
-               <CMS id='9822cb63-d840-4b7f-98eb-b6d87147f79c' />
+                <CMS id='9822cb63-d840-4b7f-98eb-b6d87147f79c' />
             </Link>
         ),
     }
@@ -69,6 +70,12 @@ const courses_scolaire = [
 
 const Nav = () => {
     const [isOpen, setIsOpen] = useState(false)
+    const pathname = usePathname();
+
+    useEffect(() => {
+        setIsOpen(false);
+    }, [pathname])
+
     return (
         <header className=''>
             <nav className='container flex flex-col md:flex-row justify-between py-4 md:py-0 items-start md:items-center'>
@@ -107,7 +114,7 @@ const Nav = () => {
                             <li className='py-1'>
                                 <DropdownView items={courses_scolaire} title={<CMS id='f52be135-c749-4d5c-b3db-1394dbaa717b' />} />
                             </li>
-                            <li className='py-1'> <Link href={'/'}><CMS id='7c1a6cdf-6f3c-4154-90d9-62b887635212' /></Link> </li>
+                            <li className='py-1'> <Link href={'/vie-scolaire'}><CMS id='7c1a6cdf-6f3c-4154-90d9-62b887635212' /></Link> </li>
                             <li className='py-1'> <Link href={'/admissions'}><CMS id='30665c05-7ecc-4aeb-b397-b9521962e110' /></Link> </li>
                             <li className='py-1'> <Link href={'/recrutements'}><CMS id='4b62af8a-2158-47dd-9cd7-efde7c8e17e7' /></Link> </li>
                             <li className='py-1'> <Link href={'/nous-contact'}><CMS id='6d1837b7-c9a4-4b4d-9818-357b67c4fd23' /></Link> </li>

@@ -12,16 +12,18 @@ const initialState = {
 };
 
 const query = groq`
-  *[_type == 'content']
+  *[_type == 'annonce']
   {
-   _id,
-   title
+    mainImage,
+    _id,
+    title,
+    description
   }
 `;
 
 
-export const fetchContent: AsyncThunk<FetchDataReturnType, void, {}> = createAsyncThunk(
-    'content/fetchContent',
+export const fetchAnnonces: AsyncThunk<FetchDataReturnType, void, {}> = createAsyncThunk(
+    'content/fetchAnnonces',
     async () => {
         try {
             const data = await client.fetch(query); // Replace 'your-api-url' with the actual API URL
@@ -32,25 +34,25 @@ export const fetchContent: AsyncThunk<FetchDataReturnType, void, {}> = createAsy
     }
 );
 
-export const contentSlice = createSlice({
-    name: 'content',
+export const annoncesSlice = createSlice({
+    name: 'annonces',
     initialState,
     reducers: {},
     extraReducers: (builder) => {
         builder
-            .addCase(fetchContent.pending, (state) => {
+            .addCase(fetchAnnonces.pending, (state) => {
                 state.loading = true;
                 state.error = "null";
             })
-            .addCase(fetchContent.fulfilled, (state, action) => {
+            .addCase(fetchAnnonces.fulfilled, (state, action) => {
                 state.loading = false;
                 state.data = action.payload;
             })
-            .addCase(fetchContent.rejected, (state, action) => {
+            .addCase(fetchAnnonces.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.error.message || "";
             });
     },
 });
 
-export default contentSlice.reducer;
+export default annoncesSlice.reducer;

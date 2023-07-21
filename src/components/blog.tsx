@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { urlForImage } from '../../sanity/lib/image';
+import { useRouter } from 'next/navigation';
 
 interface TrunText {
     text: string;
@@ -23,26 +24,25 @@ function truncateText(text: string, maxLength: number, isTrun = false): TrunText
 }
 
 function Blog({ content }: any) {
-    const truncatedContent = truncateText(content.body, 200);
+    const navigate = useRouter();
+    const truncatedContent = truncateText(content.text, 200);
     const options: Intl.DateTimeFormatOptions = { month: 'short', day: 'numeric', year: 'numeric' };
     const publishDate: string = new Date(content.publishedAt).toLocaleDateString('en-US', options);
 
-
     return (
-        <div key={content.title} className='bg-background py-5 px-6 rounded-md border border-secondary'>
-            <Image className='rounded-md mx-auto' src={`${urlForImage(content.mainImage).url()}`} width={270} height={80} alt='' />
-            <p className='my-3 font-medium'>{content.title}</p>
-            <p>{truncatedContent.text}</p>
-            {
-                truncatedContent.isTrun && (
-                    <div />
-                )
-            }
-            <Link href={'/blog'} className='text-dorange'>Read More</Link>
-            <div className='text-gray-400 mt-2'>
-                <p>{publishDate} ∙<span className='mx-4'>3 min read</span></p>
+        <div  key={content._id} className='rounded-md border border-secondary' >
+            <Link href={`/vie-scolaire/${content.slug.current}`} className='cursor-pointer'>
+                <Image className='rounded-t-md mx-auto min-w-full' src={`${urlForImage(content.mainImage).url()}`} width={270} height={280} alt='' />
+            </Link>
+            <div className='px-6 py-2'>
+                <p className='mt-3 font-medium'>{content.title}</p>
+                <div className='text-gray-400 mb-2'>
+                    <p>{publishDate}</p>
+                </div>
+                <p>{truncatedContent.text}</p>
+                <div className='cursor-pointer text-dorange'>Read More</div>
             </div>
-        </div>
+        </div >
     );
 }
 

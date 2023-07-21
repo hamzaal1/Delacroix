@@ -20,6 +20,12 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'text',
+      title: 'text',
+      type: 'text',
+      rows: 5
+    }),
+    defineField({
       name: 'mainImage',
       title: 'Main image',
       type: 'image',

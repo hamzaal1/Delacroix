@@ -22,15 +22,6 @@ export async function POST(request) {
         // Access the incoming request's body and extract the file
         const { email, name, phone, subject, message } = await request.json();
 
-        // Ensure the file exists in the request body
-        // if (!file) {
-        //     return NextResponse.json({ error: "No file attached." });
-        // }
-
-        // Extract file details
-        // const { filename, content, contentType } = file;
-
-        // Send the email with the attachment
         await trasnport.sendMail({
             from: process.env.SMTP_EMAIL,
             to: process.env.SMTP_EMAIL,
@@ -75,7 +66,7 @@ export async function POST(request) {
                     </head>
                     <body>
                         <div class="container">
-                            <h1>Contact Form Submission</h1>
+                            <h1>Admissions Form Submission</h1>
                             <ul>
                                 <li><strong>Subject:</strong> ${subject}</li>
                                 <li><strong>Name:</strong> ${name}</li>
@@ -89,18 +80,11 @@ export async function POST(request) {
                         </div>
                     </body>
                 </html>
-            `,
-            // attachments: [
-            //     {
-            //         filename,
-            //         content,
-            //         contentType,
-            //     },
-            // ],
+            `
         });
 
         const data = {
-            message: "File sent successfully",
+            message: "Message sent successfully",
             status: "ok",
         };
         return NextResponse.json(data);
