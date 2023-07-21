@@ -3,10 +3,22 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import CMS from './cms';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/redux/store';
+
+interface Content {
+    _id: string;
+    title: string;
+}
 
 const Footer: React.FC = () => {
     const [showPresentation, setShowPresentation] = useState(false);
     const [showCourses, setShowCourses] = useState(false);
+    let facebook_id = "9174b9e9-c408-477b-9449-15eceb99e3ea";
+    let instagrame_id = "7f6d325c-ffde-45ce-a719-3a21a76a1bcf";
+    const { data } = useSelector((state: RootState) => state.content);
+    let facebook = data.find((obj: Content) => obj._id === facebook_id) || { _id: "null", title: "null" };
+    let instagram = data.find((obj: Content) => obj._id === instagrame_id) || { _id: "null", title: "null" };
     return (
         <footer className="bg-gray-800 text-white">
             <div className="container mx-auto px-4 grid md:grid-cols-3 gap-5 py-14">
@@ -95,25 +107,25 @@ const Footer: React.FC = () => {
                         </li>
                         <li>
                             <i className="fa-solid fa-arrow-right-long me-2" />
-                            <Link href={'/'}>
+                            <Link href={'/vie-scolaire'}>
                                 <CMS id='7c1a6cdf-6f3c-4154-90d9-62b887635212' />
                             </Link>
                         </li>
                         <li>
                             <i className="fa-solid fa-arrow-right-long me-2" />
-                            <Link href={'/'}>
+                            <Link href={'/admissions'}>
                                 <CMS id='30665c05-7ecc-4aeb-b397-b9521962e110' />
                             </Link>
                         </li>
                         <li>
                             <i className="fa-solid fa-arrow-right-long me-2" />
-                            <Link href={'/'}>
+                            <Link href={'/recrutements'}>
                                 <CMS id='4b62af8a-2158-47dd-9cd7-efde7c8e17e7' />
                             </Link>
                         </li>
                         <li>
                             <i className="fa-solid fa-arrow-right-long me-2" />
-                            <Link href={'/'}>
+                            <Link href={'/nous-contact'}>
                                 <CMS id='6d1837b7-c9a4-4b4d-9818-357b67c4fd23' />
                             </Link>
                         </li>
@@ -125,12 +137,12 @@ const Footer: React.FC = () => {
                     </h3>
                     <ul className='flex gap-5 text-3xl  text-gray-300 justify-center md:justify-start'>
                         <li>
-                            <a href="" target='_blank'>
+                            <a href={instagram.title} target='_blank'>
                                 <i className="fa-brands fa-instagram " />
                             </a>
                         </li>
                         <li>
-                            <a href="" target='_blank'>
+                            <a href={facebook.title} target='_blank'>
                                 <i className="fa-brands fa-square-facebook" />
                             </a>
                         </li>
