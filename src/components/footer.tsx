@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
                         </Link>
                     </div>
                     <h3 className='text-2xl font-medium mb-6 text-center md:text-start'> <CMS id='8adc6076-abb6-4519-a4f5-4603da0a2920' /> </h3>
-                    <ul className='grid grid-rows-1 gap-2 text-gray-300 justify-center md:justify-start'>
+                    <ul className='grid grid-rows-1 gap-2 text-gray-300 text-center md:text-start justify-center md:justify-start'>
                         <li><i className="fa-regular fa-map me-1 text-lg" /><span> <CMS id='17ada544-f319-4fc4-9aac-fdbbd04ff3ff' />  </span></li>
                         <li> <i className="fa-regular fa-paper-plane me-2 text-lg" /><span> <CMS id='3cc7396c-6d29-40e8-92d0-fa69b3d10043' />  </span></li>
                         <li> <i className="fa-solid fa-phone me-2 text-lg" /><span> <CMS id='82c238ca-6ff2-4319-99db-f0503c3106ae' />  </span></li>
