@@ -96,6 +96,7 @@ const Nav = () => {
                         <div >
                             <h3 className='font-semibold'><CMS id='25a17bd2-8069-4c2d-92ef-44b50d432b2a' /></h3>
                             <p><CMS id='82c238ca-6ff2-4319-99db-f0503c3106ae' /></p>
+                            <p><CMS id='7242c44b-42f0-4790-8b9d-3128facc1099' /></p>
                         </div>
                     </div>
                 </div>
