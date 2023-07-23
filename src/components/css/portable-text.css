@@ -1,0 +1,12 @@
+/* custom-styles.css */
+
+.sanity-portable-text ul {
+    list-style-type: square;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.sanity-portable-text p {
+    padding-bottom: 0.7rem;
+}
+

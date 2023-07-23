@@ -10,7 +10,7 @@ const presrntation = [
     {
         key: '1',
         label: (
-            <Link className='px-10' rel="noopener noreferrer" href="https://www.antgroup.com">
+            <Link className='px-10' rel="noopener noreferrer" href="/a-props">
                 <CMS id='88731520-0ca0-4b54-9b8f-f833cd8c4965' />
             </Link>
         ),
@@ -18,7 +18,7 @@ const presrntation = [
     {
         key: '2',
         label: (
-            <Link className='px-10' rel="noopener noreferrer" href="https://www.antgroup.com">
+            <Link className='px-10' rel="noopener noreferrer" href="/notre-vision">
                 <CMS id='3567aa1b-4c67-480b-ad10-a228c794a0c2' />
             </Link>
         ),
@@ -26,7 +26,7 @@ const presrntation = [
     {
         key: '3',
         label: (
-            <Link className='px-10' rel="noopener noreferrer" href="https://www.antgroup.com">
+            <Link className='px-10' rel="noopener noreferrer" href="/notre-mission">
                 <CMS id='555fc22b-f4b2-4cd9-9983-464654f9d191' />
             </Link>
         ),
@@ -36,7 +36,7 @@ const courses_scolaire = [
     {
         key: '1',
         label: (
-            <Link className='px-10' rel="noopener noreferrer" href="https://www.antgroup.com">
+            <Link className='px-10' rel="noopener noreferrer" href="/maternelle">
                 <CMS id='1c8f9e7a-4ede-4bf9-b253-2c50f02690e8' />
             </Link>
         ),
@@ -44,7 +44,7 @@ const courses_scolaire = [
     {
         key: '2',
         label: (
-            <Link className='px-10' rel="noopener noreferrer" href="https://www.antgroup.com">
+            <Link className='px-10' rel="noopener noreferrer" href="/elementaire">
                 <CMS id='83f37ab2-0864-4a31-8176-8f3398ff3d5d' />
             </Link>
         ),
@@ -52,7 +52,7 @@ const courses_scolaire = [
     {
         key: '3',
         label: (
-            <Link className='px-10' rel="noopener noreferrer" href="https://www.antgroup.com">
+            <Link className='px-10' rel="noopener noreferrer" href="/college">
                 <CMS id='fd019c85-e728-448c-972c-936e28ec5662' />
             </Link>
         ),
@@ -60,7 +60,7 @@ const courses_scolaire = [
     {
         key: '4',
         label: (
-            <Link className='px-10' rel="noopener noreferrer" href="https://www.antgroup.com">
+            <Link className='px-10' rel="noopener noreferrer" href="/lycee">
                 <CMS id='9822cb63-d840-4b7f-98eb-b6d87147f79c' />
             </Link>
         ),

@@ -1,9 +1,8 @@
-// "use client";
+"use client";
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { urlForImage } from '../../sanity/lib/image';
-import { useRouter } from 'next/navigation';
 
 interface TrunText {
     text: string;
@@ -24,7 +23,6 @@ function truncateText(text: string, maxLength: number, isTrun = false): TrunText
 }
 
 function Blog({ content }: any) {
-    const navigate = useRouter();
     const truncatedContent = truncateText(content.text, 200);
     const options: Intl.DateTimeFormatOptions = { month: 'short', day: 'numeric', year: 'numeric' };
     const publishDate: string = new Date(content.publishedAt).toLocaleDateString('en-US', options);
