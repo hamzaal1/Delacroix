@@ -6,6 +6,7 @@ import "@/components/css/home.css"
 import { useSelector } from 'react-redux';
 import { RootState } from '@/redux/store';
 import { urlForImage } from '../../sanity/lib/image';
+import { motion } from 'framer-motion';
 
 
 interface Annonce {
@@ -44,11 +45,21 @@ const CarouselList = () => {
                         <div
                             style={{ backgroundImage: `url(${annonce?.mainImage ? urlForImage(annonce.mainImage).url() : ""})` }}
                             className="md:px-32 py-36 speciel_offer flex flex-wrap justify-center items-center">
-                            <div className="flex flex-col items-center px-2 md:px-16">
-                                <h3 className='text-4xl md:text-5xl font-bold mb-4'>{annonce.title}</h3>
-                                <p className='font-medium leading-6 text-base md:text-xl'>
+                            <div
+                                className="flex flex-col items-center px-2 md:px-16">
+                                <motion.h3
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.8, ease: "easeIn" }}
+                                    className='text-4xl md:text-5xl font-bold mb-4'>{annonce.title}
+                                </motion.h3>
+                                <motion.p
+                                    initial={{ opacity: 0 }}
+                                    whileInView={{ opacity: 1 }}
+                                    transition={{ duration: 0.8, ease: "easeIn" }}
+                                    className='font-medium leading-6 text-base md:text-xl'>
                                     {annonce.description}
-                                </p>
+                                </motion.p>
                             </div>
                         </div>
                     </div>

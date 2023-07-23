@@ -61,13 +61,13 @@ const Footer: React.FC = () => {
                                     </li>
                                     <li>
                                         <i className="fa-solid fa-arrow-right-long me-2" />
-                                        <Link href={'/a-props'}>
+                                        <Link href={'/notre-vission'}>
                                             <CMS id='3567aa1b-4c67-480b-ad10-a228c794a0c2' />
                                         </Link>
                                     </li>
                                     <li>
                                         <i className="fa-solid fa-arrow-right-long me-2" />
-                                        <Link href={'/a-props'}>
+                                        <Link href={'/notre-mission'}>
                                             <CMS id='555fc22b-f4b2-4cd9-9983-464654f9d191' />
                                         </Link>
                                     </li>
@@ -83,25 +83,25 @@ const Footer: React.FC = () => {
                                 showCourses && <ul className='grid grid-rows-1 gap-2 text-gray-300 text-sm justify-center md:justify-start ps-4 py-2'>
                                     <li>
                                         <i className="fa-solid fa-arrow-right-long me-2" />
-                                        <Link href={'/a-props'}>
+                                        <Link href={'/maternelle'}>
                                             <CMS id='1c8f9e7a-4ede-4bf9-b253-2c50f02690e8' />
                                         </Link>
                                     </li>
                                     <li>
                                         <i className="fa-solid fa-arrow-right-long me-2" />
-                                        <Link href={'/a-props'}>
+                                        <Link href={'/elementaire'}>
                                             <CMS id='83f37ab2-0864-4a31-8176-8f3398ff3d5d' />
                                         </Link>
                                     </li>
                                     <li>
                                         <i className="fa-solid fa-arrow-right-long me-2" />
-                                        <Link href={'/a-props'}>
+                                        <Link href={'/college'}>
                                             <CMS id='fd019c85-e728-448c-972c-936e28ec5662' />
                                         </Link>
                                     </li>
                                     <li>
                                         <i className="fa-solid fa-arrow-right-long me-2" />
-                                        <Link href={'/a-props'}>
+                                        <Link href={'/lycee'}>
                                             <CMS id='9822cb63-d840-4b7f-98eb-b6d87147f79c' />
                                         </Link>
                                     </li>

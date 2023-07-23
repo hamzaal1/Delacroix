@@ -52,7 +52,7 @@ function page({ params }) {
                     <Media />
                 </div>
                 <div className='flex flex-col justify-center mt-2 md:px-10 gap-5'>
-                    <h2 className='text-3xl font-bold px-2 mb-3 sp-text'>{blog.title}</h2>
+                    <h2 className='text-3xl font-bold mb-3 sp-text'>{blog.title}</h2>
                     <div className='flex flex-wrap'>
                         <Image className='object-contain mx-auto mb-2' src={`${urlForImage(blog.mainImage).url()}`} width={600} height={100} alt='' />
                         <p className='leading-8 text-justify'> {blog.text}</p>

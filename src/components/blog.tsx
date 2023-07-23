@@ -28,7 +28,7 @@ function Blog({ content }: any) {
     const publishDate: string = new Date(content.publishedAt).toLocaleDateString('en-US', options);
 
     return (
-        <div  key={content._id} className='rounded-md border border-secondary' >
+        <div key={content._id} className='rounded-md border border-secondary' >
             <Link href={`/vie-scolaire/${content.slug.current}`} className='cursor-pointer'>
                 <Image className='rounded-t-md mx-auto min-w-full' src={`${urlForImage(content.mainImage).url()}`} width={270} height={280} alt='' />
             </Link>
@@ -38,7 +38,9 @@ function Blog({ content }: any) {
                     <p>{publishDate}</p>
                 </div>
                 <p>{truncatedContent.text}</p>
-                <div className='cursor-pointer text-dorange'>Read More</div>
+                <Link href={`/vie-scolaire/${content.slug.current}`} className='cursor-pointer text-dorange'>
+                    En savoir plus
+                </Link>
             </div>
         </div >
     );

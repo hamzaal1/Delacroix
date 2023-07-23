@@ -28,7 +28,7 @@ function ServerActionRecrutements() {
     const handleFormSubmit = async (event) => {
         event.preventDefault(); // Prevent default form submission
         let isvalide = validateForm();
-        if (!isvalide) return alert('test');
+        if (!isvalide) return;
         let newFormData = new FormData();
         newFormData.append('name', formData.name);
         newFormData.append('subject', formData.subject);

@@ -19,7 +19,7 @@ function Media() {
   let instagram = data.find((obj: Content) => obj._id === instagrame_id) || { _id: "null", title: "null" };
   return (
     <div>
-      <h2 className="text-sm font-medium">Our Media</h2>
+      <h2 className="text-sm font-medium"> <CMS id='698f0552-5e35-4a46-8819-bbb9ee657044' /> </h2>
       <div className="bg-white rounded mt-4 shadow-lg py-6">
         <div className="px-8">
           <ul className='flex gap-5 text-3xl  justify-center md:justify-start'>

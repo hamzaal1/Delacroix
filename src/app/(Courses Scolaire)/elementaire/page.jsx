@@ -47,7 +47,7 @@ function page() {
                     <Media />
                 </div>
                 <div className='flex flex-col justify-center mt-2 md:px-10 gap-5'>
-                    <h2 className='text-3xl font-bold px-2 mb-3 sp-text'>{pageData.title}</h2>
+                    <h2 className='text-3xl font-bold mb-3 sp-text'>{pageData.title}</h2>
                     <div className='sanity-portable-text text-justify leading-8 '>
                         <PortableText components={StyledPortableText} value={pageData.body} />
                     </div>
