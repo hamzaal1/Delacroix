@@ -10,7 +10,7 @@ const presrntation = [
     {
         key: '1',
         label: (
-            <Link className='px-10' rel="noopener noreferrer" href="/a-props">
+            <Link className='px-10' rel="noopener noreferrer" href="/a-propos">
                 <CMS id='88731520-0ca0-4b54-9b8f-f833cd8c4965' />
             </Link>
         ),

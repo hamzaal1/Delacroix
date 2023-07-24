@@ -1,6 +1,13 @@
 import CMS from '@/components/cms'
 import ContactUs from '@/components/contact-us'
+import { Metadata } from 'next'
 import React from 'react'
+
+export const metadata: Metadata = {
+    title: 'Recrutements | Institut Eugène Delacroix',
+    description: "Recrutements à l'Institut Eugène Delacroix : Rejoignez-nous pour une expérience éducative enrichissante et inspirante !"
+}
+
 
 function page() {
     return (

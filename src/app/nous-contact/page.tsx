@@ -1,6 +1,13 @@
 import CMS from '@/components/cms'
 import ContactUs from '@/components/contact-us'
+import { Metadata } from 'next'
 import React from 'react'
+
+
+export const metadata: Metadata = {
+  title: 'Nous Contact | Institut Eugène Delacroix',
+  description: "N'hésitez pas à nous contacter pour toute question, demande d'information ou pour planifier une visite de l'établissement. Nous serons ravis de vous accueillir et de répondre à vos besoins."
+}
 
 function page() {
   return (

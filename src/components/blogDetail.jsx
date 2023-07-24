@@ -1,18 +1,29 @@
 "use client";
 import { groq } from 'next-sanity';
 import React, { useState, useEffect } from 'react'
-import { client } from '../../../../sanity/lib/client';
-import { urlForImage } from '../../../../sanity/lib/image';
+import { urlForImage } from '../../sanity/lib/image';
 import { PortableText } from '@portabletext/react'
+import Image from 'next/image';
 import "@/components/css/portable-text.css"
 import Media from '@/components/media';
-function page() {
-    const [pageData, setPageData] = useState();
-    let qurey = groq`*[_type=='presrntation' && _id == 'e44ff60e-f235-47d4-a673-dacbc333eae7'][0]`
+import { client } from '../../sanity/lib/client';
+
+function BlogDetail({ slug }) {
+    const [blog, setBlogs] = useState();
+    async function fetchBlogData(slug) {
+        const query = groq`
+          *[_type == 'blog' && slug.current == "${slug}"][0] {
+           ...
+          }
+        `;
+
+        const data = await client.fetch(query);
+        return data;
+    }
     useEffect(() => {
         async function fetcher() {
-            const data = await client.fetch(qurey);
-            setPageData(data);
+            const data = await fetchBlogData(slug);
+            setBlogs(data);
         }
         fetcher();
     }, [])
@@ -41,15 +52,19 @@ function page() {
     }
 
     return (
-        pageData && <div className="container py-16">
+        blog && <div className="container py-16">
             <div className="flex flex-col md:flex-row">
                 <div className='order-last md:order-first'>
                     <Media />
                 </div>
                 <div className='flex flex-col justify-center mt-2 md:px-10 gap-5'>
-                    <h2 className='text-3xl font-bold mb-3 sp-text'>{pageData.title}</h2>
+                    <h2 className='text-3xl font-bold mb-3 sp-text'>{blog.title}</h2>
+                    <div className='flex flex-wrap'>
+                        <Image className='object-contain mx-auto mb-2' src={`${urlForImage(blog.mainImage).url()}`} width={600} height={100} alt='' />
+                        <p className='leading-8 text-justify'> {blog.text}</p>
+                    </div>
                     <div className='sanity-portable-text text-justify leading-8 '>
-                        <PortableText components={StyledPortableText} value={pageData.body} />
+                        <PortableText components={StyledPortableText} value={blog.body} />
                     </div>
                 </div>
             </div>
@@ -58,4 +73,5 @@ function page() {
 }
 
 
-export default page
+
+export default BlogDetail;

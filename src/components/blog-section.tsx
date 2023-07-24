@@ -5,6 +5,7 @@ import Blog from "./blog";
 import { useEffect, useState } from "react";
 import CMS from "./cms";
 
+
 const query = groq`
   *[_type == 'blog']
   | order(publishedAt desc) {

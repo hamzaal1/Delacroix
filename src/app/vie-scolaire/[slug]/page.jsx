@@ -1,101 +1,51 @@
-"use client";
 import { groq } from 'next-sanity';
-import React, { useState, useEffect } from 'react'
 import { client } from '../../../../sanity/lib/client';
-import { urlForImage } from '../../../../sanity/lib/image';
-import { PortableText } from '@portabletext/react'
-import Image from 'next/image';
 import "@/components/css/portable-text.css"
-import Media from '@/components/media';
+import BlogDetail from "@/components/blogDetail"
+import { urlForImage } from '../../../../sanity/lib/image';
+
+
 function page({ params }) {
     const { slug } = params;
-    const [blog, setBlogs] = useState();
-    useEffect(() => {
-        async function fetcher() {
-            const data = await fetchBlogData(slug);
-            setBlogs(data);
-        }
-        fetcher();
-    }, [])
-
-    useEffect(() => {
-        console.log(blog);
-    }, [blog])
-
-    const StyledPortableText = {
-        types: {
-            image: ({ value }) => <img className='mb-4 md:inline me-3 w-[600px] md:w-[350px]' src={urlForImage(value.asset._ref).url()} />,
-            callToAction: ({ value, isInline }) =>
-                isInline ? (
-                    <a href={value.url}>{value.text}</a>
-                ) : (
-                    <div className="callToAction">{value.text}</div>
-                ),
-        },
-
-        marks: {
-            link: ({ children, value }) => {
-                const rel = !value.href.startsWith('/') ? 'noreferrer noopener' : undefined
-                return (
-                    <a className='text-dblue' href={value.href} rel={rel}>
-                        {children}
-                    </a>
-                )
-            },
-        },
-    }
-
     return (
-        blog && <div className="container py-16">
-            <div className="flex flex-col md:flex-row">
-                <div className='order-last md:order-first'>
-                    <Media />
-                </div>
-                <div className='flex flex-col justify-center mt-2 md:px-10 gap-5'>
-                    <h2 className='text-3xl font-bold mb-3 sp-text'>{blog.title}</h2>
-                    <div className='flex flex-wrap'>
-                        <Image className='object-contain mx-auto mb-2' src={`${urlForImage(blog.mainImage).url()}`} width={600} height={100} alt='' />
-                        <p className='leading-8 text-justify'> {blog.text}</p>
-                    </div>
-                    <div className='sanity-portable-text text-justify leading-8 '>
-                        <PortableText components={StyledPortableText} value={blog.body} />
-                    </div>
-                </div>
-            </div>
-        </div>
+        <>
+            <BlogDetail slug={slug} />
+
+        </>
     )
 }
 
-async function fetchBlogData(slug) {
+
+export async function generateMetadata({ params }, parent) {
+    // read route params
+    const slug = params.slug
+    // fetch data
     const query = groq`
-      *[_type == 'blog' && slug.current == "${slug}"][0] {
-       ...
-      }
-    `;
+    *[_type == 'blog' && slug.current=="${slug}"][0]
+    `
+    const blog = await client.fetch(query);
 
-    const data = await client.fetch(query);
-    return data;
+    // optionally access and extend (rather than replace) parent metadata
+    const previousImages = (await parent).openGraph?.images || []
+
+    return {
+        title: blog.title,
+        description:blog.text,
+        openGraph: {
+            images: [urlForImage(blog.mainImage).url(), ...previousImages],
+        },
+    }
 }
-
 
 // Return a list of `params` to populate the [slug] dynamic segment
 export async function generateStaticParams() {
-    const [blogs, setBlogs] = useState([]);
     const query = groq`
     *[_type == 'blog']
     | order(publishedAt desc) {
     ...
-    }
-    `;
-    useEffect(() => {
-        async function fetcher() {
-            const data = await client.fetch(query);
-            setBlogs(data);
-        }
-        fetcher();
-    }, [])
-
-    return blogs.map((blog) => ({
+    }`
+    const data = await client.fetch(query);
+    return data.map((blog) => ({
         slug: blog.slug.current,
     }))
 }

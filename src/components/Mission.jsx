@@ -1,12 +1,12 @@
 "use client";
 import { groq } from 'next-sanity';
 import React, { useState, useEffect } from 'react'
-import { client } from '../../../../sanity/lib/client';
-import { urlForImage } from '../../../../sanity/lib/image';
 import { PortableText } from '@portabletext/react'
 import "@/components/css/portable-text.css"
 import Media from '@/components/media';
-function page() {
+import { client } from '../../sanity/lib/client';
+import { urlForImage } from '../../sanity/lib/image';
+function Mission() {
     const [pageData, setPageData] = useState();
     let qurey = groq`*[_type=='presrntation' && _id == '55d99fc0-cd1d-45e2-9ac7-8b1dee93242b'][0]`
     useEffect(() => {
@@ -58,4 +58,4 @@ function page() {
 }
 
 
-export default page
+export default Mission

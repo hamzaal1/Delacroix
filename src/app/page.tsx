@@ -4,11 +4,10 @@ import "@/components/css/home.css"
 import ModalView from "@/components/modal";
 import Valeurs from "@/components/valeurs";
 
+
 export default function Home() {
   return (
     <>
-
-
       <div className="container py-16">
         <h2 className="text-3xl font-semibold mb-2 text-center"> <CMS id="752c0353-fe58-4385-bcd0-00b00d41f71d" />  </h2>
         <p className="leading-6 text-center">
