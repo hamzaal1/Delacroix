@@ -19,7 +19,7 @@ export default async function sitemap(): Promise<Sitemap> {
     let blogs = await client.fetch(qurey);
 
     const blogsRoutes = blogs.map(({ slug }: any) => ({
-        url: `${process.env.BASE_URL}/vie-scolaire/${slug}`,
+        url: `${process.env.BASE_URL}vie-scolaire/${slug}`,
         lastModified: new Date(),
     }))
     const staticRoutes = [
