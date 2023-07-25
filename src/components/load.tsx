@@ -13,6 +13,7 @@ const LoadAnimation: React.FC = () => {
         return () => {
             // Re-enable scrolling when the component is unmounted
             document.body.style.overflow = 'auto';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         };
     }, [pathname]);
 
