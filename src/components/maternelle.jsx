@@ -1,14 +1,14 @@
 "use client";
 import { groq } from 'next-sanity';
 import React, { useState, useEffect } from 'react'
-import { client } from '../../../../sanity/lib/client';
-import { urlForImage } from '../../../../sanity/lib/image';
+import { client } from '../../sanity/lib/client';
+import { urlForImage } from '../../sanity/lib/image';
 import { PortableText } from '@portabletext/react'
 import "@/components/css/portable-text.css"
 import Media from '@/components/media';
-function page() {
+function Maternelle() {
     const [pageData, setPageData] = useState();
-    let qurey = groq`*[_type=='courses_scolaire' && _id == '7047205c-6f00-4cdb-8710-119fcbd55676'][0]`
+    let qurey = groq`*[_type=='courses_scolaire' && _id == '238cd09c-d5f0-4221-8f04-386e3789647c'][0]`
     useEffect(() => {
         async function fetcher() {
             const data = await client.fetch(qurey);
@@ -58,4 +58,4 @@ function page() {
 }
 
 
-export default page
+export default Maternelle;

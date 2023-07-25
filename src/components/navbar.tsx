@@ -78,12 +78,12 @@ const Nav = () => {
 
     return (
         <header className=''>
-            <nav className='container flex flex-col md:flex-row justify-between py-4 md:py-0 items-start md:items-center'>
+            <nav className='container flex flex-col md:flex-row justify-center py-4 md:py-0 items-center'>
                 {/* <Image src={"/logo.png"} width={90} height={30} alt='Delacroix Logo' /> */}
                 <Link href={'/'}>
-                    <Image src={'/logo-1.png'} width={190} height={30} alt='logo' />
+                    <Image src={'/logo-1.png'} width={240} height={30} alt='logo' />
                 </Link>
-                <div className='flex flex-col md:flex-row gap-5 md:gap-10'>
+                {/* <div className='flex flex-col md:flex-row gap-5 md:gap-10'>
                     <div className='cursor-default flex flex-row items-center gap-3'>
                         <i className="fa-regular fa-paper-plane text-dorange text-2xl" />
                         <div >
@@ -99,7 +99,7 @@ const Nav = () => {
                             <p><CMS id='7242c44b-42f0-4790-8b9d-3128facc1099' /></p>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </nav>
             <div className='bg-dblue'>
                 <div className='container py-3 text-white font-medium'>

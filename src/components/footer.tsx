@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
                                 showPresentation && <ul className='grid grid-rows-1 gap-2 text-gray-300 text-sm justify-center md:justify-start ps-4 py-2'>
                                     <li>
                                         <i className="fa-solid fa-arrow-right-long me-2" />
-                                        <Link href={'/a-props'}>
+                                        <Link href={'/a-propos'}>
                                             <CMS id='88731520-0ca0-4b54-9b8f-f833cd8c4965' />
                                         </Link>
                                     </li>
