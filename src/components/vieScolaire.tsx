@@ -7,19 +7,25 @@ import { client } from "../../sanity/lib/client";
 
 function VieScolaire() {
     const [blogs, setBlogs] = useState([]);
+    const [blogsToLoad, setBlogsToLoad] = useState(10);
+    const [hide, setHide] = useState(false);
+    
     const query = groq`
     *[_type == 'blog']
-    | order(publishedAt desc) {
-    ...
-    }[0...10]
-    `;
+    | order(publishedAt desc)
+    [0..$blogsToLoad]
+`;
+
     useEffect(() => {
         async function fetcher() {
-            const data = await client.fetch(query);
+            const data = await client.fetch(query, { blogsToLoad });
+            if (blogs.length == data?.length) {
+                setHide(true);
+            }
             setBlogs(data);
         }
         fetcher();
-    }, [])
+    }, [blogsToLoad])
 
 
 
@@ -33,6 +39,13 @@ function VieScolaire() {
                             blogs.map((blog: any) => <Blog key={blog._id} content={blog} />)
                         }
                     </div>
+                    {
+                        hide == false ? <button
+                            onClick={() => setBlogsToLoad(blogsToLoad + 5)}
+                            className="py-2 min-w-full text-3xl font-semibold bg-transparent text-dorange">
+                            <i className="fa-solid fa-angles-right fa-rotate-90"/>
+                        </button> : <></>
+                    }
                 </div>
             </div>
         </>
