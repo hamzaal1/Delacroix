@@ -81,7 +81,7 @@ const Nav = () => {
             <nav className='container flex flex-col md:flex-row justify-center py-4 md:py-0 items-center'>
                 {/* <Image src={"/logo.png"} width={90} height={30} alt='Delacroix Logo' /> */}
                 <Link href={'/'}>
-                    <Image src={'/logo.jpg'} width={240} height={30} alt='logo' />
+                    <Image src={'/main-logo.png'} width={240} height={30} alt='main-logo' />
                 </Link>
                 {/* <div className='flex flex-col md:flex-row gap-5 md:gap-10'>
                     <div className='cursor-default flex flex-row items-center gap-3'>
