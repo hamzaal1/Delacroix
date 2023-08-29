@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
                 <div>
                     <div className='flex justify-center md:justify-start items-center'>
                         <Link className='inline-block ' href={'/'}>
-                            <Image className='mb-4 md:mb-2 ' src={'/logo-1.jpg'} width={180} height={30} alt='logo' />
+                            <Image className='mb-4 md:mb-2 ' src={'/logo.jpg'} width={180} height={30} alt='logo' />
                         </Link>
                     </div>
                     <h3 className='text-2xl font-medium mb-6 text-center md:text-start'> <CMS id='8adc6076-abb6-4519-a4f5-4603da0a2920' /> </h3>
