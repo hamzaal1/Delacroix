@@ -79,27 +79,9 @@ const Nav = () => {
     return (
         <header className=''>
             <nav className='container flex flex-col md:flex-row justify-center py-4 md:py-0 items-center'>
-                {/* <Image src={"/logo.png"} width={90} height={30} alt='Delacroix Logo' /> */}
                 <Link href={'/'}>
                     <Image src={'/main-logo.png'} width={245} height={30} alt='main-logo' />
                 </Link>
-                {/* <div className='flex flex-col md:flex-row gap-5 md:gap-10'>
-                    <div className='cursor-default flex flex-row items-center gap-3'>
-                        <i className="fa-regular fa-paper-plane text-dorange text-2xl" />
-                        <div >
-                            <h3 className='font-semibold'><CMS id='739638db-783c-4924-83d9-166ba0721828' /></h3>
-                            <p> <CMS id='3cc7396c-6d29-40e8-92d0-fa69b3d10043' /> </p>
-                        </div>
-                    </div>
-                    <div className='cursor-default flex flex-row items-center gap-3'>
-                        <i className="fa-solid fa-phone text-dorange text-2xl" />
-                        <div >
-                            <h3 className='font-semibold'><CMS id='25a17bd2-8069-4c2d-92ef-44b50d432b2a' /></h3>
-                            <p><CMS id='82c238ca-6ff2-4319-99db-f0503c3106ae' /></p>
-                            <p><CMS id='7242c44b-42f0-4790-8b9d-3128facc1099' /></p>
-                        </div>
-                    </div>
-                </div> */}
             </nav>
             <div className='bg-dblue'>
                 <div className='container py-3 text-white font-medium'>
