@@ -30,14 +30,7 @@ const ModalView: React.FC = () => {
                 onCancel={handleCancel}
                 width={800}
             >
-                <iframe
-                    src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FINSTITUTEUGENEDELACROIX%2Fvideos%2F298275322002695%2F&show_text=false&width=560&t=0"
-                    width="100%"
-                    height="399"
-                    style={{ border: 'none', overflow: 'hidden' }}
-                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                    allowFullScreen
-                ></iframe>
+                <video controls src={'/intro.mp4'}></video>
             </Modal>
         </>
     );
