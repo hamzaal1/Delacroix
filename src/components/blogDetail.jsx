@@ -6,6 +6,7 @@ import { PortableText } from '@portabletext/react'
 import Image from 'next/image';
 import "@/components/css/portable-text.css"
 import Media from '@/components/media';
+import VieScolaire from "@/components/vieScolaire";
 import { client } from '../../sanity/lib/client';
 
 function BlogDetail({ slug }) {
@@ -68,6 +69,8 @@ function BlogDetail({ slug }) {
                     </div>
                 </div>
             </div>
+
+            <VieScolaire />
         </div>
     )
 }
